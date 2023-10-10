@@ -2,32 +2,7 @@
 
 <div>
     
-    <div class="container">
-        <div class="filters">
-            <!-- Opções de ordenação de preço -->
-            <div class="filter-section">
-                <h5>Ordenar por Preço:</h5>
-                <label>
-                    <input type="radio" name="priceSort" wire:model="priceInput" wire:click="applyFilter" value="high-to-low" /> Mais caro ao mais barato
-                </label>
-                <label>
-                    <input type="radio" name="priceSort" wire:model="priceInput" wire:click="applyFilter" value="low-to-high" /> Mais barato ao mais caro
-                </label>
-            </div>
-    
-            <!-- Marcas -->
-            <div class="filter-section">
-                <h5>Marcas:</h5>
-                @if($category->brands)
-                    @foreach ($category->brands as $brandItem)
-                        <label>
-                            <input type="checkbox" wire:model="brandInputs" wire:click="applyFilter" value="{{ $brandItem->name }}" /> {{ $brandItem->name }}
-                        </label>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    
+   
           
             
      
@@ -35,12 +10,14 @@
 
      
          <!--  Seção de produtos em tendência -->
+<!--  Seção de produtos em tendência -->
+<br>
+<br>
+<br>
+<section  id="trending" style="padding: 0px;">
 
-<section class="trending-product" id="trending">
-   
-   
     <div class="center-text">
-       <h2>Nossos <span>Produtos</span> em alta</h2>
+       <h2>Nossos Produtos da Categoria: <span>{{ $category->name }}</span></h2>
     </div>
  
     <div class="products">
@@ -75,7 +52,7 @@
    
     </div> 
  </section>
-
+         
 
 
 </div> 

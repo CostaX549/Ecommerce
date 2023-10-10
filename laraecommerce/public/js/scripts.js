@@ -24,10 +24,31 @@ $(document).ready(function () {
   });
 
 window.addEventListener('message', event => {
+ 
    alertify.set('notifier', 'position', 'top-right');
-   alertify.success(event.detail.title, event.detail.type);
+   alertify.notify(event.detail.title, event.detail.type);
+
+
 });
 
+$(document).ready(function () {
+  const cashOnDeliveryButton = $('[data-value="Cash on Delivery"]');
+  const onlinePaymentButton = $('[data-value="Online Payment"]');
+  const cashOnDeliveryMode = $('#cashOnDeliveryMode');
+  const onlinePaymentMode = $('#onlinePaymentMode');
+
+  cashOnDeliveryButton.click(function () {
+      onlinePaymentMode.fadeOut(300, function () {
+          cashOnDeliveryMode.fadeIn(300);
+      });
+  });
+
+  onlinePaymentButton.click(function () {
+      cashOnDeliveryMode.fadeOut(300, function () {
+          onlinePaymentMode.fadeIn(300);
+      });
+  });
+});
 
 
  

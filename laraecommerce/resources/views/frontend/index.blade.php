@@ -16,7 +16,9 @@
               <h1>{{ $sliderItem->title }}</h1>
               <p>{{ $sliderItem->description }}</p>
               <a href="{{ $sliderItem->link }}" class="main-btn">{{ $sliderItem->text }}<i class='bx bx-right-arrow-alt'></i></a>
-          
+              <div class="down-arrow">
+                <a href="#trending" class="down"><i class='bx bx-down-arrow-alt' ></i></a>
+              </div>  
           </div>
           
       </div>
@@ -70,17 +72,7 @@
 
 <!--    Client-Review-section -->
 
-<section class="client-reviews">
-<div class="reviews">
-  <h3>Client Reviews</h3>
-  <img src="image/team-1.jpg" alt="">
-  <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris  <br> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit  esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt <br> in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <h2>Mark Jevenue</h2>
-  <p>CEO of Addle</p>
-</div>
-</section>
+
 
 <!-- update-news-section -->
 <section class="Update-news">

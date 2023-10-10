@@ -25,10 +25,16 @@ Route::get('/collections','categories');
 Route::get('/collections/{category_slug}', 'products');
 Route::get('/collections/{category_slug}/{product_slug}', 'productView');
 
+
 });
 
 Route::middleware(['auth'])->group(function () {
 Route::get('wishlist', [App\Http\Controllers\Frontend\WishlistController::class, 'index']);
+Route::get('cart', [App\Http\Controllers\Frontend\CartController::class, 'index']);
+Route::get('checkout', [App\Http\Controllers\Frontend\CheckoutController::class, 'index']);
+Route::get('orders', [App\Http\Controllers\Frontend\OrderController::class, 'index']);
+Route::get('orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::class, 'show']);
+
 });
 
 // Rota principal
@@ -85,6 +91,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/colors/{color}/edit', 'edit');
     Route::put('/colors/{color_id}', 'update');
     Route::get('/colors/{color_id}/delete', 'destroy');
+  
+   }); 
+
+   Route::controller(App\Http\Controllers\Admin\OrderController::class)->group(function () {
+    Route::get('/orders', 'index');
+    Route::get('/orders/{orderId}', 'show');
+
   
    }); 
   

@@ -9,7 +9,7 @@
      
 <!--  Seção de produtos em tendência -->
 <div>
-    <section class="trending-product" id="trending">
+   
       
         <div class = "main-wrapper">
             <div class = "container">
@@ -22,24 +22,46 @@
                     </div>
                     <div class = "product-div-right">
                         <span class = "product-name">{{ $product->name }}</span>
+                   
                         <span class = "product-price">R$ {{ $product->selling_price }}</span>
+                        @if($product->productColors->count() > 0)
+                        @if($product->productColors)
+                            @foreach($product->productColors as $colorItem)
+                                <label class="color-label" style="background-color: {{ $colorItem->color->code }};" wire:click="colorSelected({{ $colorItem->id }})">
+                                    {{$colorItem->color->name}}
+                                </label>
+                            @endforeach
+                        @endif
+                    
+                        @if($this->prodColorSelectedQuantity == 'ForaDeEstoque')
+                            <label class="availability-label out-of-stock">Fora de Estoque</label>
+                        @elseif($this->prodColorSelectedQuantity > 0)
+                            <label class="availability-label in-stock">Em estoque</label>
+                        @endif
+                    @else
+                        @if($product->quantity)
+                            <label class="availability-label in-stock">Em estoque</label>
+                        @else
+                            <label class="availability-label out-of-stock">Fora de estoque</label>
+                        @endif
+                    @endif
                         <div class = "product-rating">
                             <div class="quantity-container">
-                                <button class="quantity-button" id="decrement">-</button>
-                                <input class="quantity-input" id="quantity" type="text" value="1">
-                                <button class="quantity-button" id="increment">+</button>
+                                <button class="quantity-button" id="decrement" wire:click="decrementQuantity">-</button>
+                                <input class="quantity-input" wire:model="quantityCount" id="quantity" type="text" readonly value="{{ $this->quantityCount }}">
+                                <button class="quantity-button" id="increment" wire:click="incrementQuantity">+</button>
                             </div>
                         
                         </div>
                         <p class = "product-description">{{ $product->small_description }}</p>
                         <div class = "btn-groups">
-                            <button type = "button" class = "add-cart-btn"><i class='bx bx-cart'></i> adicionar ao carrinho</button>
+                            <button type = "button" wire:click="addToCart({{ $product->id }})" class = "add-cart-btn"><i class='bx bx-cart'></i> adicionar ao carrinho</button>
                             <button type = "button" class = "buy-now-btn"><i class = "fas fa-wallet"></i>compre agora</button>
                             <div class="heart-icons">
                                 @if($isInWishlist)
-                                    <i wire:click="removeFromWishlist({{ $product->id }})" class='bx bxs-heart'></i>
+                                    <i wire:click="removeFromWishlist({{ $product->id }})" id="heart-icon" class='bx bxs-heart'></i>
                                 @else
-                                    <i wire:click="addToWishList({{ $product->id }})" class='bx bx-heart'></i>
+                                    <i wire:click="addToWishList({{ $product->id }})" id="heart-icon" class='bx bx-heart'></i>
                                 @endif
                             </div>
                         </div>
@@ -48,50 +70,7 @@
                 </div>
             </div>
         </div>
-    </section>
+ 
     
   
 </div>
-{{--  
-      <div class="center-text">
-            <h2><span>{{ $product->name }}</span></h2>
-        </div>
-        <div class="productInformations" >
-            R${{ $product->selling_price}}
-          </div>
-    
-        <div class="products">
-            <div class="row">
-                <a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">
-                    <img src="{{ asset($product->productImages[0]->image) }}" id="singularProductImage" alt="" style="border: 2px solid #2c2c2c;">
-                </a>
-    
-                <div class="product-info">
-                    <div class="product-text">
-                        @if($product->quantity > 0)
-                            <h5>Em estoque</h5>
-                        @else
-                            <h5 style="background-color: red;">Fora de estoque</h5>
-                        @endif
-                    </div>
-    
-<div class="heart-icon">
-    @if($isInWishlist)
-        <i wire:click="removeFromWishlist({{ $product->id }})" class='bx bxs-heart'></i>
-    @else
-        <i wire:click="addToWishList({{ $product->id }})" class='bx bx-heart'></i>
-    @endif
-</div>
-
-<div class="ratting">
-    <i class='bx bx-star'></i>
-    <i class='bx bx-star'></i>
-    <i class='bx bx-star'></i>
-    <i class='bx bx-star'></i>
-    <i class='bx bxs-star-half'></i>
-</div>
-
-
-</div>
-</div>
-</div> --}}

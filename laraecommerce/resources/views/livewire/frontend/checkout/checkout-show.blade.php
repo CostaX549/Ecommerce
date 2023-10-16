@@ -1,5 +1,5 @@
 <div>
-    
+    <br>
     <div class="checkout">
         <div class="container">
             <h4>Comprar</h4>
@@ -11,7 +11,7 @@
                     <span class="float-end">R${{ $this->totalProductAmount }}</span>
                 </h4>
                <hr>
-                <small>* Produtos vão ser entreges em  3 a 5 dias.</small>
+                <small>* Produtos vão ser entregues em  3 a 5 dias.</small>
                 <br>
                 <small>* Tax and other charges are included?</small>
             </div>
@@ -72,12 +72,12 @@
                         <hr>
                         
                         <button type="button" wire:loading.attr="disabled" wire:click="codOrder" class="payment-button">
-                            <span wire:loading.remove wire:target="codOrder">
+                           
                             Finalizar Pedido (Pagamento na Entrega)
-                          </span>
-                          <span wire:loading wire:target="codOrder">
-                            Finalizando Pedido (Pagamento na Entrega)
-                          </span>
+                      
+                        
+                        
+                       
 
                         </button>
                 

@@ -88,6 +88,7 @@ class View extends Component
                             'quantity' => $this->quantityCount
  
                          ]);
+                         $isInCart = true;
                          $this->dispatch('cart-created');
                          $this->dispatch('message', title:'Produto adicionado ao carrinho.', type:  'success');
                         } else {

@@ -10,9 +10,18 @@ use App\Models\Product;
 class FrontendController extends Controller
 {
     public function index () {
-        $sliders = Slider::where('status', '0')->get();
-        $products = Product::where('status', '0')->where('trending', '1')->get();
-        return view('frontend.index', compact('sliders', 'products'));
+
+        $search = request('search');
+        if($search) {
+            $products = Product::where('name', 'like', '%'.$search.'%')->get();
+            return view('frontend.index', compact('products', 'search'));
+        } else {
+            $sliders = Slider::where('status', '0')->get();
+            $products = Product::where('status', '0')->where('trending', '1')->get();
+       
+            return view('frontend.index', compact('sliders', 'products', 'search'));
+        }
+    
     }
 
     public function categories() {

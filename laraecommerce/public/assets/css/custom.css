@@ -14,8 +14,48 @@ body {
     
 }
 
-/* Estilos para a div de container */
+#campoBusca {
+    border: 2px solid #fff;
+    border-radius: 5px;
+   margin-right: 10px;
+padding: 5px;
+    background-color: transparent;
+    color: #fff;
+  
+}
+::placeholder {
+  
+    color: #e3e3e3;
+  }
 
+/* Estilos para a div de container */
+.hover-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.hover-container div{
+    border: 2px solid rgb(190,153, 58);
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0 4px 8px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-container div:hover{
+    border-color: rgb(255, 145, 163);
+}
+.hover-container div img{
+    width: 50px;
+    cursor: pointer;
+}
+.active{
+    border-color: rgb(255, 145, 163)!important;
+}
 
 
 body {
@@ -50,11 +90,13 @@ header {
 .cart-item {
     background-color: rgb(16, 16, 16);
     border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
+
 
 .cart-item img {
     width: 100%; /* Alterado para preencher a largura do contêiner pai */
@@ -74,9 +116,7 @@ header {
     color: #333;
 }
 
-.product-name {
-    font-weight: bold;
-}
+
 
 .price {
     font-weight: bold;
@@ -194,6 +234,10 @@ ul {
     font-size: 25px;
     font-weight: 400;
     transition: all .42s ease;
+}
+
+.nav-icon form {
+    display: flex;
 }
 
 .nav-icon i:hover {
@@ -415,7 +459,7 @@ max-width: 100%;
     margin-bottom: 30px;
 }
 .Update-news {
-    background-color: #161616;
+    background-color: rgb(15,15,15);
 }
 
 .cart img {
@@ -647,15 +691,15 @@ img{
     font-size: 26px;
     color: #fff;
     margin-bottom: 22px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 1px;
-    opacity: 0.9;
+   
 }
 .product-price{
     color: #fff;
     font-weight: 700;
     font-size: 24px;
-    opacity: 0.9;
+
     font-weight: 500;
 }
 .product-rating{
@@ -670,9 +714,9 @@ img{
 .product-description{
     color: #fff;
     font-weight: 18px;
-    line-height: 1.6;
-    font-weight: 300;
-    opacity: 0.9;
+    line-height: 1.7;
+    font-weight: 400;
+   
     margin-top: 22px;
 }
 .btn-groups{
@@ -982,7 +1026,7 @@ img{
     border: 1px solid #ccc;
     padding: 30px;
     width: 62%;
-   
+   border-radius: 5px;
   margin: 0 auto;
   color: #fff;
 }

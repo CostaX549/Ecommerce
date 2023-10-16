@@ -20,7 +20,7 @@
 
     <div class="checkout-section" style="border: none; width: 80%;">
               
-        <div class="cart-summary">
+        <div class="cart-summary" style="border-radius: 10px;">
             
           
             <div class="item total">
@@ -62,7 +62,7 @@
 
     <div class="checkout-section"  style="border: none; width: 80%;">
               
-        <div class="cart-summary">
+        <div class="cart-summary" style="border-radius: 10px;">
             
           
             <div class="item total">

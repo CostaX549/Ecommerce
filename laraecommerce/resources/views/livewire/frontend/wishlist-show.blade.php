@@ -1,12 +1,10 @@
 <div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-  
+
     <div class="container" id="trending"> <!-- Adicione o estilo inline para aplicar o padding -->
-            
+        <h2 style="padding-top: 75px; color: #fff; text-align: center;">Lista de Desejos</h2>
+        <hr style="margin-bottom: 15px;;">
+
             @forelse($wishlist as $wishlistItem)
             @if($wishlistItem->product)
             <div class="cart-item">
@@ -19,11 +17,11 @@
                     <div class="price">R${{ $wishlistItem->product->selling_price }}</div>
                 </div>
                 <div class = "product-rating">
-                    <div class="quantity-container">
-                        <button class="quantity-button" id="decrement">-</button>
-                        <input class="quantity-input" id="quantity" type="text" value="1">
-                        <button class="quantity-button" id="increment">+</button>
-                    </div>
+                
+                    <a  class="view-button" style="margin: 5px; width: 100px;" href="{{ url('/collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug)}}">
+                      Ver
+                    </a>
+            
                 
                 </div>
                 <div class="remove">

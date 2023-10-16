@@ -102,8 +102,9 @@ public function validationForAll() {
 
        if($codOrder) {
         Cart::where('user_id', auth()->user()->id)->delete();
-        $this->orderPlaced = true; // Define a variável como verdadeira para indicar que a compra foi realizada com sucesso
+        $this->orderPlaced = true; 
         $this->dispatch('message', title:'Compra realizada com sucesso.', type:  'success');
+    
        } else {
         $this->dispatch('message', title:'Algo aconteceu de errado!', type:  'error');
        }

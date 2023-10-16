@@ -1,12 +1,11 @@
 <div>
     
 
-        <br>
-        <br>
-        <br>
-        <br>
       
         <div class="container" id="trending"> <!-- Adicione o estilo inline para aplicar o padding -->
+            <h2 style="padding-top: 75px; color: #fff; text-align: center;">Carrinho</h2>
+            <hr style="margin-bottom: 15px;;">
+   
                 @forelse ($cart as $cartItem)
                 @if($cartItem->product)
                 <div class="cart-item">
@@ -64,7 +63,7 @@
                
              
         </div>
-        @if ($cart)
+        @if ($cartData)
         <div class="checkout-section">
             <h2>Resumo do Pedido</h2>
             <div class="cart-summary">

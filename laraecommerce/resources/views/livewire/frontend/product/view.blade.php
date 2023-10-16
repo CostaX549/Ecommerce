@@ -18,6 +18,14 @@
                         <div class = "img-container">
                             <img src="{{ asset($product->productImages[0]->image) }}" alt="">
                         </div>
+
+                        <div class = "hover-container">
+                              @foreach($product->productImages as $itemImage)
+                            <div><img src="{{ asset($itemImage->image) }}"></div>   
+                           
+                            @endforeach
+                        </div>
+                        
                        
                     </div>
                     <div class = "product-div-right">

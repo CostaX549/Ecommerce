@@ -49,6 +49,33 @@ $(document).ready(function () {
       });
   });
 });
+const allHoverImages = document.querySelectorAll('.hover-container div img');
+const imgContainer = document.querySelector('.img-container');
 
+
+
+allHoverImages.forEach((image) => {
+    image.addEventListener('click', () =>{
+        imgContainer.querySelector('img').src = image.src;
+        resetActiveImg();
+        image.parentElement.classList.add('active');
+    });
+});
+
+function resetActiveImg(){
+    allHoverImages.forEach((img) => {
+        img.parentElement.classList.remove('active');
+    });
+}
+
+document.getElementById('mostrarBusca').addEventListener('click', function() {
+  var campoBusca = document.getElementById('campoBusca');
+  
+  if (campoBusca.style.display === 'none' || campoBusca.style.display === '') {
+      campoBusca.style.display = 'block';
+  } else {
+      campoBusca.style.display = 'none';
+  }
+});
 
  

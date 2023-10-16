@@ -8,6 +8,8 @@ use App\Models\Cart;
 class CartShow extends Component
 {
     public $cart, $totalPrice = 0;
+   public $isInCart = false;
+   public $cartData;
 
     
 
@@ -72,8 +74,12 @@ class CartShow extends Component
     public function render()
     {
         $this->cart = Cart::where('user_id', auth()->user()->id)->get();
+        $this->cartData = Cart::where('user_id', auth()->user()->id)->exists();
+       
         return view('livewire.frontend.cart.cart-show', [
-            'cart' =>  $this->cart
+            'cart' =>  $this->cart,
+            'cartData' => $this->cartData
+           
         ]);
     }
 }

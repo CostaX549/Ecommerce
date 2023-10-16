@@ -4,7 +4,34 @@
 
 @section('content')
 
+@if($search)
 
+
+ 
+<div class="container" id="trending" > <!-- Adicione o estilo inline para aplicar o padding -->
+  <h2 style="padding-top: 50px; color: #fff;">Buscando por: {{ $search }}</h2>
+  <hr style="margin-bottom: 15px;;">
+   
+  @forelse($products as $product)
+
+  <div class="cart-item">
+      <img src="{{ $product->productImages[0]->image }}" alt="{{ $product->name }}">
+      <div class="product-info">
+          <a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug)}}">
+              <div class="product-name">{{ $product->name }}</div>
+             
+          </a>
+          <div class="price">R${{ $product->selling_price }}</div>
+      </div>
+    
+  </div>
+
+  @empty
+  <div class="no-products">Nenhum produto encontrado na busca.</div>
+  @endforelse
+
+</div>
+@else
 
 <div id="myEcommerceCarousel" class="owl-carousel">
   @foreach($sliders as $sliderItem)
@@ -104,5 +131,6 @@
   </div>
 </div>
 </section>
+@endif
 
 @endsection

@@ -10,7 +10,7 @@ class Index extends Component
 {
     public $category;
     public $brandInputs = [], $priceInput;    
-    public $products; // Declare a variável $products
+    public $products; 
   
 
     protected $queryString = [

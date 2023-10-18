@@ -113,6 +113,7 @@
 
         <div class="col-md-4">
             <div class="mb-3">
+            
                 <label for="">Quantidade</label>
                 <input type="number" name="quantity" value="{{ $product->quantity }}" class="form-control" />
             </div>
@@ -243,6 +244,7 @@
     $(document).on('click','.uptadeProductColorBtn', function() {
 
       var product_id = "{{ $product->id }}";
+    
       var prod_color_id = $(this).val();
       var qty = $(this).closest('.prod-color-tr').find('.productColorQuantity').val();
       // alert(prod_color_id);

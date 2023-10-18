@@ -39,7 +39,7 @@
       <img src="{{ asset("$sliderItem->image") }}" alt="">
       <div class="text-overlay">
           <div class="main-text">
-              <h5>Coleção de Inverno</h5>
+              <h5>Anúncios</h5>
               <h1>{{ $sliderItem->title }}</h1>
               <p>{{ $sliderItem->description }}</p>
               <a href="{{ $sliderItem->link }}" class="main-btn">{{ $sliderItem->text }}<i class='bx bx-right-arrow-alt'></i></a>
@@ -61,7 +61,7 @@
 <section class="trending-product" id="trending">
 
    <div class="center-text">
-      <h2>Nossos <span>Produtos</span> em alta</h2>
+      <h2>Nossos Produtos  <span>em alta</span> </h2>
    </div>
 
    <div class="products">
@@ -77,9 +77,7 @@
               <h5 style="background-color: red;">Fora de estoque</h5>
               @endif
           </div>
-          <div class="heart-icon">
-              <i class='bx bx-heart'></i>
-          </div>
+      
           <div class="ratting">
               <i class='bx bx-star'></i>
               <i class='bx bx-star'></i>
@@ -104,31 +102,20 @@
 <!-- update-news-section -->
 <section class="Update-news">
 <div class="up-center-text">
-  <h2>Novas Atualizações</h2>
+  <h2>Conecte-se com o universo fictício em questão de cliques.</h2>
 </div>
 
 <div class="update-cart">
   <div class="cart">
-      <img src="/image/bl-1.png" alt="">
-      <h5>01 oct 2023</h5>
-      <h4>Let's start bring sale on this summer vacation.</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-      <h6>Continue lendo...</h6>
+      <img src="/image/avengers4.jpg" alt="">
+    
   </div>
+
   <div class="cart">
-      <img src="/image/bl-2.png" alt="">
-      <h5>01 oct 2023</h5>
-      <h4>Let's start bring sale on this summer vacation.</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-      <h6>Continue lendo...</h6>
-  </div>
-  <div class="cart">
-      <img src="/image/bl-3.png" alt="">
-      <h5>01 oct 2023</h5>
-      <h4>Let's start bring sale on this summer vacation.</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-      <h6>Continue lendo...</h6>
-  </div>
+    <img src="/image/batman.jpg" alt="">
+  
+</div>
+ 
 </div>
 </section>
 @endif

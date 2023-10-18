@@ -42,7 +42,7 @@
                         @endif
                     
                         @if($this->prodColorSelectedQuantity == 'ForaDeEstoque')
-                            <label class="availability-label out-of-stock">Fora de Estoque</label>
+                            <label class="availability-label out-of-stock" style="margin-top: 40px;">Fora de Estoque</label>
                         @elseif($this->prodColorSelectedQuantity > 0)
                             <label class="availability-label in-stock">Em estoque</label>
                         @endif
@@ -50,7 +50,7 @@
                         @if($product->quantity)
                             <label class="availability-label in-stock">Em estoque</label>
                         @else
-                            <label class="availability-label out-of-stock">Fora de estoque</label>
+                            <label class="availability-label out-of-stock" >Fora de estoque</label>
                         @endif
                     @endif
                         <div class = "product-rating">

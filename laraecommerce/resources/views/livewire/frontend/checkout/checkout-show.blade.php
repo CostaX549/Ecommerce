@@ -5,7 +5,7 @@
             <h4>Comprar</h4>
           
             @if (!$orderPlaced && $this->totalProductAmount != 0)
-            <div class="checkout-box">
+            <div class="checkout-box" style="border-radius: 5px;">
                 <h4 class="text-primary">
                     Total da Compra:
                     <span class="float-end">R${{ $this->totalProductAmount }}</span>
@@ -16,7 +16,7 @@
                 <small>* Tax and other charges are included?</small>
             </div>
 
-            <div class="checkout-box">
+            <div class="checkout-box" style="border-radius: 5px;">
                 <h4 class="text-primary">
                   Informações Básicas
                 </h4>

@@ -89,8 +89,8 @@ class ProductController extends Controller
 
    public function update(ProductFormRequest $request, int $product_id) {
     $validatedData = $request->validated();
-    $product = Category::findOrFail($validatedData['category_id'])
-    ->products()->where('id', $product_id)->first();
+    $product = Product::findOrFail($product_id);
+   
     if($product) {
         $product->update([
             'category_id' => $validatedData['category_id'],
@@ -129,6 +129,7 @@ class ProductController extends Controller
     }
 
     if($request->colors) {
+      
         foreach($request->colors as $key => $color) {
             $product->productColors()->create([
               'product_id' => $product->id,
@@ -136,6 +137,7 @@ class ProductController extends Controller
               'quantity' => $request->colorquantity[$key] ?? 0
             ]);
         }
+
     }
 
      return redirect('/admin/products')->with('message', 'Produto editado com sucesso');
@@ -155,7 +157,11 @@ class ProductController extends Controller
    }
 
    public function destroy(int $product_id) {
+
     $product = Product::findOrFail($product_id);
+    if ($product->orders->count() > 0) {
+        return redirect()->back()->with('message', 'Este produto não pode ser excluído, pois está associado a pedidos anteriores.');
+    }
     if($product->productImages) {
         foreach($product->productImages as $image) {
             if(File::exists($image->image)) {
@@ -163,17 +169,22 @@ class ProductController extends Controller
             }
         }
     }
+   
     $product->delete();
     return redirect()->back()->with('message', 'Produto deletado com todas as suas imagens.');
 }
 
 public function updateProdColorQty(Request $request, $prod_color_id) {
+    
       $productColorData = Product::findOrFail($request->product_id)
        ->productColors()->where('id', $prod_color_id)->first();
 
+    
        $productColorData->update([
        'quantity' => $request->qty
        ]);
+
+ 
 
    return response()->json(['message' => 'Quantidade de produtos com a cor editada']);
 }

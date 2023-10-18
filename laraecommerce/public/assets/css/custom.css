@@ -23,6 +23,41 @@ padding: 5px;
     color: #fff;
   
 }
+
+#campoBuscaMobile {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 100%;
+    flex: 1 1 0;
+    background-color: transparent;
+    color: #fff;
+    display: none;
+}
+
+.mobile-search {
+    display: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+ 
+    
+}
+@media (max-width: 768px) {
+#campoBusca {
+    display: none;
+}
+
+.no-mobile-search {
+    display: none;
+}
+.mobile-search {
+    display: block;
+}
+}
+
+
 ::placeholder {
   
     color: #e3e3e3;
@@ -289,9 +324,9 @@ section {
 }
 
 .main-text p {
-    color: blue;
+    color: #fff;
     font-size: 20px;
-    font-style: italic;
+   
     margin-bottom: 20px;
 }
 
@@ -376,7 +411,7 @@ header.sticky {
 
 .row img {
 max-width: 100%;
-  max-height: 350px;
+max-height: 350px;
   cursor: pointer;
   object-fit: cover;
   border-radius: 5px;
@@ -454,7 +489,7 @@ max-width: 100%;
     text-align: center;
     color: #fff;
     font-size: 25px;
-    text-transform: capitalize;
+
     font-weight: 700;
     margin-bottom: 30px;
 }
@@ -463,17 +498,18 @@ max-width: 100%;
 }
 
 .cart img {
-   max-width: 100%;
+   max-width: 80%;
     height: auto;
+    margin: 0 auto;
     border-radius: 5px;
 }
 
 .update-cart {
      
     justify-content: center; /* Para centralizar verticalmente */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, auto));
-    gap: 4rem;
+    display: flex;
+   flex-direction: column;
+    gap: 3rem;
 }
 
 .cart h5 {
@@ -753,11 +789,15 @@ img{
     color: #000;
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 768px){
     .main-wrapper {
         background-color: transparent;
         display: block;
     
+    }
+
+    .checkout-box {
+        width: 100%;
     }
    
     .product-div{

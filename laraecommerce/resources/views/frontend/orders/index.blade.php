@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" id="trending">
     <h2 class="order-history">Minhas Compras</h2>
 
     <div class="order-list">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         @empty
-            <p>Nenhuma compra disponível.</p>
+        <div class="no-products" style="margin: 0 auto;">Nenhuma compra disponível.</div>
         @endforelse
     </div>
 

@@ -1,13 +1,23 @@
 <header>
-    <a href="" class="logo"><img src="image/logo.png" alt=""></a>
+<a href=""></a>
   
     <ul class="navmenu">
         <li><a href="/">home</a></li>
         <li><a href="/collections" >categorias</a></li>
-        <li><a href="/wishlist" wire:navigate>produtos</a></li>
-        <li><a href="">page</a></li>
-        <li><a href="">Docs</a></li>
+        <li><a href="/wishlist" wire:navigate>lista de desejos</a></li>
+        <li><a href="/cart" wire:navigate>carrinho</a></li>
       
+        @auth
+        <li>  
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Sair
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+     
+      </li>
+    @endauth
         
     </ul>
   

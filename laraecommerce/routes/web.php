@@ -37,8 +37,8 @@ Route::get('orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::c
 
 });
 
-// Rota principal
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Rota de agradecimento
+Route::get('/thankyou', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Configuração do middleware para controlar o acesso as rotas
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {

@@ -15,6 +15,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -107,7 +108,7 @@
     <section class="contact">
         <div class="contact-info">
           <div class="first-info">
-              <img src="image/logo.png" alt="">
+      
         
               <p>3245 Grant Street Longview, <br> TX united kingdom 765378</p>
               <p>01601348732</p>

@@ -40,8 +40,11 @@ public function validationForAll() {
             $codOrder = $this->placeOrder();
             if($codOrder) {
                 Cart::where('user_id', auth()->user()->id)->delete();
+                return redirect('/thankyou');
                 $this->orderPlaced = true; // Define a variável como verdadeira para indicar que a compra foi realizada com sucesso
+             
                 $this->dispatch('message', title:'Compra realizada com sucesso.', type:  'success');
+             
             } else {
                 $this->dispatch('message', title:'Algo aconteceu de errado!', type:  'error');
             }
@@ -64,7 +67,7 @@ public function validationForAll() {
         'user_id' => auth()->user()->id,
         'tracking_no'=> 'spot-'.Str::random(10),
         'fullname' => $this->fullname,
-        'email'=> $this->fullname,
+        'email'=> $this->email,
         'phone'=> $this->phone,
         'pincode'=> $this->pincode,
         'address'=> $this->address,
@@ -101,9 +104,12 @@ public function validationForAll() {
        $codOrder = $this->placeOrder();
 
        if($codOrder) {
+     
         Cart::where('user_id', auth()->user()->id)->delete();
+        return redirect('/thankyou');
         $this->orderPlaced = true; 
         $this->dispatch('message', title:'Compra realizada com sucesso.', type:  'success');
+      
     
        } else {
         $this->dispatch('message', title:'Algo aconteceu de errado!', type:  'error');

@@ -32,7 +32,7 @@ class LoginController extends Controller
         if(Auth::user()->role_as == '1') {
             return redirect('admin/dashboard')->with('message', 'Bem-vindo ao Painel');
         } else {
-            return redirect('/home')->with('status', 'Logado com sucesso');
+            return redirect('/')->with('status', 'Logado com sucesso');
         }
     }
 

@@ -15,6 +15,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link rel="icon" href="/image/spotlighticon.png" type="image/png">
 
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
